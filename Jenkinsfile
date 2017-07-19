@@ -18,7 +18,7 @@ node {
                 echo "Change Title with [skip db]: ${env.CHANGE_TITLE}"
             }
             else {
-                echo "Title without param: ${env.CHANGE_TITLE}"
+                echo "${env.CHANGE_TITLE}"
             }
 
 
