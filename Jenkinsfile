@@ -11,10 +11,10 @@ node {
         stage('PR') {
             echo "Check PR"
 
-            if (env.CHANGE_TITLE ==~ /skip ci/) {
+            if (env.CHANGE_TITLE =~ /skip ci/) {
                 echo "Change Title with [skip ci]: ${env.CHANGE_TITLE}"
             }
-            else if (env.CHANGE_TITLE ==~ /skip db/) {
+            else if (env.CHANGE_TITLE =~ /skip db/) {
                 echo "Change Title with [skip db]: ${env.CHANGE_TITLE}"
             }
             else {
