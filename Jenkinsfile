@@ -30,6 +30,14 @@ node {
             echo "Change Target: ${env.CHANGE_TARGET}"
             echo "Change URL: ${env.CHANGE_URL}"
 
+            checkout([$class: 'GitSCM',
+              branches: [[name: '${sha1}']],
+              doGenerateSubmoduleConfigurations: false,
+              extensions: [],
+              submoduleCfg: [],
+              userRemoteConfigs: [[refspec: '+refs/pull/*:refs/remotes/origin/pr/*',
+              url: 'https://github.com/id-den/jenkins-github.git']]])
+
             if (currentBuild.result == 'SUCCESS') {
                 echo "SUCCESS"
             }
