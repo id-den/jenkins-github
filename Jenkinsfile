@@ -31,7 +31,7 @@ node {
             echo "Change URL: ${env.CHANGE_URL}"
 
             checkout([$class: 'GitSCM',
-              branches: [[name: '${sha1}']],
+              branches: [[name: '${ghprbPullTitle}']],
               doGenerateSubmoduleConfigurations: false,
               extensions: [],
               submoduleCfg: [],
